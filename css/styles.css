@@ -1,17 +1,18 @@
 nav {
   background-color: #003876;
 }
-@media all and (min-width: 600px) {
-  nav {
-    width: 600px;
-    margin: 0 auto;
-  }
-}
 nav img {
   float: left;
 }
+nav #hamburger-menu img {
+  width: 40px;
+  height: 40px;
+  float: right;
+  margin: 10px 15px 0 0;
+}
 nav ul {
   margin: 0;
+  display: none;
 }
 nav li {
   display: inline-block;
@@ -19,6 +20,7 @@ nav li {
 nav li a {
   color: white;
   text-decoration: none;
+  font-family: Opensans, sans-serif;
   line-height: 50px;
 }
 nav:after {
@@ -45,6 +47,21 @@ body h2 {
 body p {
   font-size: 16px;
   font-family: raleway, sans-serif;
+}
+
+#banner img {
+  width: 100%;
+  height: auto;
+}
+
+#map-container {
+  height: 280px;
+  width: 320px;
+}
+@media all and (min-width: 600px) {
+  #map-container {
+    float: right;
+  }
 }
 
 #timetable ul {
@@ -92,6 +109,24 @@ body p {
 }
 #delays p {
   padding: 0 20px;
+}
+
+#news .notice-container {
+  padding: 10px;
+}
+#news .img-container img {
+  width: 50%;
+  height: auto;
+}
+#news .notice-heading a {
+  color: #f29e4e;
+  font-weight: bold;
+}
+#news .notice-heading a:hover {
+  color: #003876;
+}
+#news .notice-content {
+  display: none;
 }
 
 footer {
