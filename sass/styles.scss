@@ -5,6 +5,9 @@ $brandColor: #003876;
 nav {
 	background-color: $brandColor;
 
+	#nav-container {
+		background-color: $brandColor;
+	}
 	img {
 		float: left;
 	}
@@ -27,6 +30,8 @@ nav {
 			color: white;
 			text-decoration: none;
 			font-family: Opensans, sans-serif;
+			font-weight: bold;
+			font-size: 20px;
 			line-height: 50px;
 		}
 	}
@@ -37,21 +42,42 @@ nav {
 		clear: both;
 	}
 
-	// @include bp-tablet {
-	// 	ul {
-	// 		display: block;
-	// 		float: right;
+	@include bp-desktop {
 
-	// 		li {
-	// 			margin-right: 10px;
-	// 			line-height: 70px;
-	// 		}
-	// 	}
-	// 	#hamburger-menu img {
-	// 		display: none;
-	// 	}
-	// }
+		#nav-container {
+			width: 1024px;
+			margin: 0 auto;
+		}
+		img {
+			margin-right: 30px;
+		}
 
+		ul {
+			display: block;
+
+			li {
+				margin-right: 40px;
+				line-height: 70px;
+				a:hover {
+					color:  #d45f51;
+					text-decoration: underline;
+				}
+			}
+
+		}
+		#hamburger-menu img {
+			display: none;
+		}
+	}
+
+}
+
+#desktop-container {
+	@include bp-desktop {
+		width: 1024px;
+		margin: 0 auto;
+		background-color: #f4f2f1;
+	}
 }
 
 body {
@@ -64,7 +90,7 @@ body {
 		color: #f4f2f1;
 		text-align: center;
 		padding: 5px 0;
-		margin: 0;	
+		margin: 0;
 	}
 
 	h2 {
@@ -75,23 +101,53 @@ body {
 		font-size: 16px;
 		font-family: raleway, sans-serif;
 	}
+	@include bp-desktop {
+		background-color: #406A98;
+	}
 
 }
 
 #banner {
-	
+	line-height: 0;
 	img {
 		width: 100%;
 		height: auto;
 	}
 }
 
-#map-container {
-	height: 280px;
-	width: 320px;
+// #ticket-position {
+// 	@include bp-tablet {
+// 		float: right;
+// 	}
+// }
+#layout-change {
 
 	@include bp-tablet {
-		float: right;
+		#right {
+			float: right;
+			width: 50%;
+		}
+		#left {
+			float: left;
+			width: 50%;
+		}
+	}
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+#map-wrapper {
+
+	#map-container {
+		height: 280px;
+		width: 320px;
+
+		@include bp-tablet {
+			float: right;
+		}
 	}
 }
 
@@ -120,6 +176,14 @@ body {
 		text-decoration: underline;
 	}
 	
+	@include bp-tablet {
+		#timetable-color {
+			background-color: #A80032;
+		}
+		#timetable {
+			float: left;
+		}
+	}
 }
 
 #line-1 {
@@ -144,8 +208,9 @@ body {
 
 #delays {
 	text-align: center;
+	
 	p {
-		padding: 0 20px;
+		padding: 0px 20px 10px 20px;
 	}
 
 }
@@ -154,31 +219,100 @@ body {
 
 	.notice-container {
 		padding: 10px;
+
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
 	}
 
-	.img-container img {
+	.more-notice-container {
+		display: none;
+		padding: 10px;
+
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		@include bp-tablet {
+			display: block;
+		}
+	}
+
+	.image-container img {
 		width: 50%;
 		height: auto;
+		margin-right: 5px;
+		margin-bottom: 5px;
+		float: left;
+
+		@include bp-tablet {
+			width: 184px;
+			height: 110px;
+		}
 	}
 
-	.notice-heading a {
-		color: #f29e4e;
-		font-weight: bold;
-	}
+	.notice-heading {
+		width: 45%;
+		margin: 0;
+		float: right;
+		a {
+			color: #d45f51;
+			font-weight: bold;
+		}
 
-	.notice-heading a:hover {
-		color: #003876;
-	}
+		a:hover {
+			color: #003876;
+		}
+		@include bp-tablet {
+			float: none;
+			width: auto;
+		}
 
+	}
+	
 	.notice-content {
 		display: none;
+		
+		@include bp-tablet {
+			display: block;
+			margin-left: 10px;
+		}
+		a {
+			color: #f29e4e;
+		}
+		a:hover {
+			color: #003876;
+		}
 	}
 
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	#more-news {
+		background-color: #A80032;
+		a {
+			color: #f29e4e;
+			text-decoration: none;
+		}
+		a:hover {
+			color: #003876;
+			text-decoration: underline;
+		}
+		@include bp-tablet {
+			display: none;
+		}
+	}
 }
 
 footer {
 	background-color: $brandColor;
 	text-align: center;
+	padding-bottom: 10px;
 
 	h2 {
 		padding: 10px 0 10px 0;
@@ -186,9 +320,18 @@ footer {
 		margin: 0;
 	}
 
+	img {
+		width: 64px;
+		height: 64px;
+	}
+
 	a {
 		color: #d45f51;
 		font-family: raleway, sans-serif;
 
+	}
+
+	ul {
+		display: none;
 	}
 }

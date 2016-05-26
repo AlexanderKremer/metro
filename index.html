@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Home | AK Design</title>
+		<title>Home | Tranz Metro Resposive Demo</title>
 		<meta name="description" content="Between 150 and 160 characters">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -12,7 +12,8 @@
 
 	<!-- main content goes here -->
 	<nav>
-		<a href="index.html"><img src="http://placehold.it/150x70"></a>
+		<div id="nav-container">
+			<a href="index.html"><img src="http://placehold.it/150x70"></a>
 			
 			<div id="hamburger-menu">
 				<a href="#"><img src="img/hamburger.png"></a>
@@ -25,66 +26,113 @@
 				<li><a href="#">About</a></li>
 				<li><a href="#">Contact</a></li>
 			</ul>
+		</div>
 	</nav>
 
-	<div id="banner">
-		<img src="img/banner-test.jpg">
-	</div>
-
-	<h1>Ticket Finder</h1>
-
-	<div id="map-container">
-	
-	</div>
-
-	<div id="timetable">
-		<h1>Timetables</h1>
-		<ul>
-			<li id="line-1"><a href="#">Kapiti</a></li>
-			<li id="line-2"><a href="#">Johnsonville</a></li>
-			<li id="line-3"><a href="#">Hutt Valley</a></li>
-			<li id="line-4"><a href="#">Melling</a></li>
-			<li id="line-5"><a href="#">Wairarapa</a></li>
-		</ul>
-	</div>
-
-	<div id="delays">
-		<h1>Delays</h1>
-		<h2 id="today"></h2>
-		<p>There are no service delays reported at this time</p>
-	</div>
-
-	<div id="news">
-		<h1>Noticeboard</h1>
-		
-		<div class="notice-container">
-			<div class="image-container">
-				<img src="img/bus.jpg">
-			</div>
-			<p class="notice-heading"><a href="#">When buses are replacing trains - where do I catch the bus?</a></p>
-			<p class="notice-content">When buses replace trains on the Wellington rail network, the following locations are where buses stop to pick up and drop off passengers. Read more.</p>
-		</div>	
-
-		<div class="notice-container">
-			<div class="image-container">
-				<img src="img/train.jpg">
-			</div>
-			<p class="notice-heading"><a href="#">Service Interruption Glossary</a></p>
-			<p class="notice-content">Trains can run late for a number of reasons which are not always apparent to the passengers. Some of the more common reasons for delays are faults and emergency incidents. The following information outlines what can cause a delay and how it can affect the running of a service. Read more.</p>
+	<div id="desktop-container">
+		<div id="banner">
+			<img src="img/banner-test.jpg">
 		</div>
 
-		<div class="notice-container">
-			<div class="image-container">
-				<img src="img/mini-train-map.jpg">
+		<div id ="layout-change">
+			<div id="right">
+				<h1 id="ticket-position">Ticket Finder</h1>
+				<div id="map-wrapper">
+					<div id="map-container">
+					</div>
+				</div>
 			</div>
-			<p class="notice-heading"><a href="#">Station abbreviations</a></p>
-			<p class="notice-content">If you subscribe to our customer alert system you will see that we need to abbreviate station names in our texts and tweets. Read more.</p>
+
+			<div id="left">
+				<div id="timetable">
+					<h1 id="timetable-color">Timetables</h1>
+					<ul>
+						<li id="line-1"><a href="#">Kapiti</a></li>
+						<li id="line-2"><a href="#">Johnsonville</a></li>
+						<li id="line-3"><a href="#">Hutt Valley</a></li>
+						<li id="line-4"><a href="#">Melling</a></li>
+						<li id="line-5"><a href="#">Wairarapa</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="delays">
+			<h1>Delays</h1>
+			<h2 id="today"></h2>
+			<p>There are no service delays reported at this time</p>
+		</div>
+
+		<div id="news">
+			<h1>Noticeboard</h1>
+
+			<div class="notice-container">
+				<div class="image-container">
+					<img src="img/delays.jpg">
+				</div>
+				<p class="notice-heading"><a href="#">Delays to services on the Kapiti Line</a></p>
+				<p class="notice-content">Passengers are advised to expect delays to some services on the Kapiti Line due to speed restrictions. <a href="#">Read more.</a></p>
+			</div>
+			
+			<div class="notice-container">
+				<div class="image-container">
+					<img src="img/bus.jpg">
+				</div>
+				<p class="notice-heading"><a href="#">When buses are replacing trains - where do I catch the bus?</a></p>
+				<p class="notice-content">When buses replace trains on the Wellington rail network, the following locations are where buses stop to pick up and drop off passengers. <a href="#">Read more.</a></p>
+			</div>	
+
+			<div class="notice-container">
+				<div class="image-container">
+					<img src="img/train.jpg">
+				</div>
+				<p class="notice-heading"><a href="#">Service Interruption Glossary</a></p>
+				<p class="notice-content">Trains can run late for a number of reasons which are not always apparent to the passengers. Some of the more common reasons for delays are faults and emergency incidents. The following information outlines what can cause a delay and how it can affect the running of a service. <a href="#">Read more.</a></p>
+			</div>
+
+			<div class="more-notice-container">
+				<div class="image-container">
+					<img src="img/mini-train-map.jpg">
+				</div>
+				<p class="notice-heading"><a href="#">Station abbreviations</a></p>
+				<p class="notice-content">If you subscribe to our customer alert system you will see that we need to abbreviate station names in our texts and tweets. <a href="#">Read more.</a></p>
+			</div>
+
+			<div class="more-notice-container">
+				<div class="image-container">
+					<img src="img/stadium.jpg">
+				</div>
+				<p class="notice-heading"><a href="#">Heading to and from an event at the Wellington Stadium</a></p>
+				<p class="notice-content">Never been to the Wellington Stadium for an event? Here's how! Read more..</p>
+			</div>
+
+			<div class="more-notice-container">
+				<div class="image-container">
+					<img src="img/time.jpg">
+				</div>
+				<p class="notice-heading"><a href="#">Tranz Metro Punctuality</a></p>
+				<p class="notice-content">We know that the single most important part of our business is to get our passengers where they want to go on time. Because this is so important we will post this information on our site on a regular basis. <a href="#">Read more.</a></p>
+			</div>
+			<h1 id="more-news"><a href="#">More notices</a></h1>
 		</div>
 	</div>
 
 	<footer>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Timetables</a>
+			<li><a href="#">Delays</a></li>
+			<li><a href="#">Notice boards</a>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+
+		<h2>Social media</h2>
+		<img src="img/facebook.png">
+		<img src="img/twitter.png">
 		<h2>Contact Us</h2>
 		<a href="#">contact@metro.co.nz</a>
+
 	</footer>
 
 	<script src="js/geolocation.js"></script>

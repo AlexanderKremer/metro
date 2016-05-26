@@ -1,7 +1,13 @@
 var mainMap;
 var allMarkers = [];
+var userMarker;
+var directionsService;
+var directionsDisplay;
 
 function initMap() {
+
+	directionsService = new google.maps.DirectionsService;
+  	directionsDisplay = new google.maps.DirectionsRenderer;
 
 	//Get a reference to the map container (div)
 	var mapContainer = document.querySelector('#map-container');
@@ -12,8 +18,8 @@ function initMap() {
 			lat: -41.300439,
 			lng: 174.780291
 		},
-		zoom: 14,
-		minZoom: 13,
+		zoom: 15,
+		minZoom: 14,
 		zoomControl: false,
 		mapTypeControl: false
 		// scrollwheel: false
@@ -21,6 +27,8 @@ function initMap() {
 
 	// Create a new Google Map
 	mainMap = new google.maps.Map(mapContainer, options);
+
+	directionsDisplay.setMap(mainMap);
 
 	// Now we're ready to show the store markers
 	placeStoreMarkers();
@@ -34,19 +42,34 @@ function placeStoreMarkers() {
 	// Connect to database and get the locations
 	var locations = [
 		{
-			title: "Hataitai Shop",
-			lat: -41.304199,
-			lng: 174.794832
+			title: "Wellington Railway Station",
+			lat: -41.279228,
+			lng: 174.780333
 		},
 		{
-			title: "Petone Store",
-			lat: -41.224220,
-			lng: 174.882146
+			title: "Fix Grand Arcade",
+			lat: -41.286757,
+			lng: 174.775874
 		},
 		{
-			title: "Lambton Quay Store",
-			lat: -41.284934, 
-			lng: 174.775541
+			title: "Fix Manners Mall",
+			lat: -41.290526,
+			lng: 174.775967
+		},
+		{
+			title: "Fix Cuba St",
+			lat: -41.293184,
+			lng: 174.775833
+		},
+		{
+			title: "Fix Courtenay Place",
+			lat: -41.293514,
+			lng: 174.780839
+		},
+		{
+			title: "Panache",
+			lat: -41.283873, 
+			lng: 174.775185
 		}
 	];
 
@@ -61,7 +84,7 @@ function placeStoreMarkers() {
 			},
 			map: mainMap,
 			title: locations[i].title,
-			icon:'http://placehold.it/50x50',
+			icon:'img/nav-point.png',
 			id: i
 		});
 
@@ -146,13 +169,68 @@ function getUserLocation() {
 			});
 
 			// Work out the closest shop
-			// var distance = google.maps.geometry.sepherical.computeDistanceBetween();
+			var userLocation = new google.maps.LatLng({
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			});
+
+			var closestDistance = 9999999999999;
+			var closestMarker;
+
+			// Loop over all the locations
+			for( var i=0; i<allMarkers.length; i++ ) {
+
+				// Save a marker in a variable
+				var marker = allMarkers[i];
+
+				var markerLocation = new google.maps.LatLng({
+					lat: marker.getPosition().lat(),
+					lng: marker.getPosition().lng()
+				});
+
+				// Get distance
+				var distance = google.maps.geometry.spherical.computeDistanceBetween(userLocation, markerLocation);
+							console.log(distance);
 			
+				// Is this marker closer than the closest one so far?
+				if( distance < closestDistance ) {
 
+					// This is the new closest store
+					closestDistance = distance;
+					closestMarker = marker;
+				}
+			}
 
+			console.log(closestMarker);
+
+			calculateAndDisplayRoute(closestMarker);
 		});
-
-
 	}
 
+function calculateAndDisplayRoute(closestMarker) {
+
+	var pos1 = new google.maps.LatLng({
+		lat: closestMarker.getPosition().lat(),
+		lng: closestMarker.getPosition().lng()
+	});
+
+	var pos2 = new google.maps.LatLng({
+		lat: userMarker.getPosition().lat(),
+		lng: userMarker.getPosition().lng()
+	});
+
+	var options = {
+	 	travelMode: google.maps.TravelMode.WALKING,
+	 	origin: pos2,
+	 	destination: pos1
+	};
+
+	 directionsService.route(options, function(response, status){
+		if (status === google.maps.DirectionsStatus.OK) {
+	      directionsDisplay.setDirections(response);
+	    } else {
+	      window.alert('Directions request failed due to ' + status);
+	    }
+	});
+	}
 }
