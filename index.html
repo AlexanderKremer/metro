@@ -13,25 +13,32 @@
 	<!-- main content goes here -->
 	<nav>
 		<div id="nav-container">
-			<a href="index.html"><img src="http://placehold.it/150x70"></a>
-			
+			<div id="logo-container">
+				<a href="index.html"><img id="logo" src="img/logo.png" alt="Tranz Metro company logo"></a>
+			</div>
+
 			<div id="hamburger-menu">
 				<a href="#"><img src="img/hamburger.png"></a>
 			</div>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Timetables</a>
-				<li><a href="#">Delays</a></li>
-				<li><a href="#">Notice boards</a>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
+
+			<div id="list-container">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Timetables</a>
+					<li><a href="#">Delays</a></li>
+					<li><a href="#">Tickets &amp; Fares</a></li>
+					<li><a href="#">Notice boards</a>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 
 	<div id="desktop-container">
 		<div id="banner">
-			<img src="img/banner-test.jpg">
+			<img id="mobile-banner" src="img/banner-mobile.png">
+			<img id="alt-banner" src="img/banner-alt.png">
 		</div>
 
 		<div id ="layout-change">
@@ -66,72 +73,84 @@
 		<div id="news">
 			<h1>Noticeboard</h1>
 
-			<div class="notice-container">
-				<div class="image-container">
-					<img src="img/delays.jpg">
+			<div id="notice-left">
+				<div class="notice-container">
+					<div class="image-container">
+						<img src="img/delays.jpg">
+					</div>
+					<p class="notice-heading"><a href="#">Delays to services on the Kapiti Line</a></p>
+					<p class="notice-content">Passengers are advised to expect delays to some services on the Kapiti Line due to speed restrictions. <a href="#">Read more.</a></p>
 				</div>
-				<p class="notice-heading"><a href="#">Delays to services on the Kapiti Line</a></p>
-				<p class="notice-content">Passengers are advised to expect delays to some services on the Kapiti Line due to speed restrictions. <a href="#">Read more.</a></p>
-			</div>
-			
-			<div class="notice-container">
-				<div class="image-container">
-					<img src="img/bus.jpg">
-				</div>
-				<p class="notice-heading"><a href="#">When buses are replacing trains - where do I catch the bus?</a></p>
-				<p class="notice-content">When buses replace trains on the Wellington rail network, the following locations are where buses stop to pick up and drop off passengers. <a href="#">Read more.</a></p>
-			</div>	
+				
+				<div class="notice-container">
+					<div class="image-container">
+						<img src="img/bus.jpg">
+					</div>
+					<p class="notice-heading"><a href="#">When buses are replacing trains - where do I catch the bus?</a></p>
+					<p class="notice-content">When buses replace trains on the Wellington rail network, the following locations are where buses stop to pick up and drop off passengers. <a href="#">Read more.</a></p>
+				</div>	
 
-			<div class="notice-container">
-				<div class="image-container">
-					<img src="img/train.jpg">
+				<div class="notice-container">
+					<div class="image-container">
+						<img src="img/train.jpg">
+					</div>
+					<p class="notice-heading"><a href="#">Service Interruption Glossary</a></p>
+					<p class="notice-content">Trains can run late for a number of reasons which are not always apparent to the passengers. Some of the more common reasons for delays are faults and emergency incidents. The following information outlines what can cause a delay and how it can affect the running of a service. <a href="#">Read more.</a></p>
 				</div>
-				<p class="notice-heading"><a href="#">Service Interruption Glossary</a></p>
-				<p class="notice-content">Trains can run late for a number of reasons which are not always apparent to the passengers. Some of the more common reasons for delays are faults and emergency incidents. The following information outlines what can cause a delay and how it can affect the running of a service. <a href="#">Read more.</a></p>
-			</div>
-
-			<div class="more-notice-container">
-				<div class="image-container">
-					<img src="img/mini-train-map.jpg">
-				</div>
-				<p class="notice-heading"><a href="#">Station abbreviations</a></p>
-				<p class="notice-content">If you subscribe to our customer alert system you will see that we need to abbreviate station names in our texts and tweets. <a href="#">Read more.</a></p>
 			</div>
 
-			<div class="more-notice-container">
-				<div class="image-container">
-					<img src="img/stadium.jpg">
+			<div id ="notice-right">
+				<div class="more-notice-container">
+					<div class="image-container">
+						<img src="img/mini-train-map.jpg">
+					</div>
+					<p class="notice-heading"><a href="#">Station abbreviations</a></p>
+					<p class="notice-content">If you subscribe to our customer alert system you will see that we need to abbreviate station names in our texts and tweets. <a href="#">Read more.</a></p>
 				</div>
-				<p class="notice-heading"><a href="#">Heading to and from an event at the Wellington Stadium</a></p>
-				<p class="notice-content">Never been to the Wellington Stadium for an event? Here's how! Read more..</p>
-			</div>
 
-			<div class="more-notice-container">
-				<div class="image-container">
-					<img src="img/time.jpg">
+				<div class="more-notice-container">
+					<div class="image-container">
+						<img src="img/stadium.jpg">
+					</div>
+					<p class="notice-heading"><a href="#">Heading to and from an event at the Wellington Stadium</a></p>
+					<p class="notice-content">Never been to the Wellington Stadium for an event? Here's how! Read more..</p>
 				</div>
-				<p class="notice-heading"><a href="#">Tranz Metro Punctuality</a></p>
-				<p class="notice-content">We know that the single most important part of our business is to get our passengers where they want to go on time. Because this is so important we will post this information on our site on a regular basis. <a href="#">Read more.</a></p>
+
+				<div class="more-notice-container">
+					<div class="image-container">
+						<img src="img/time.jpg">
+					</div>
+					<p class="notice-heading"><a href="#">Tranz Metro Punctuality</a></p>
+					<p class="notice-content">We know that the single most important part of our business is to get our passengers where they want to go on time. Because this is so important we will post this information on our site on a regular basis. <a href="#">Read more.</a></p>
+				</div>
 			</div>
 			<h1 id="more-news"><a href="#">More notices</a></h1>
 		</div>
 	</div>
 
 	<footer>
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Timetables</a>
-			<li><a href="#">Delays</a></li>
-			<li><a href="#">Notice boards</a>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
+		<div id="footer-container">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Timetables</a>
+				<li><a href="#">Delays</a></li>
+				<li><a href="#">Notice boards</a>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
 
-		<h2>Social media</h2>
-		<img src="img/facebook.png">
-		<img src="img/twitter.png">
-		<h2>Contact Us</h2>
-		<a href="#">contact@metro.co.nz</a>
+			<div id="social">
+				<h2>Social media</h2>
+				<img src="img/facebook.png">
+				<img src="img/twitter.png">
+			</div>
+
+			<div id="contact">
+				<h2>Contact Us</h2>
+				<a href="#">contact@metro.co.nz</a><br>
+				<p>Phone: 0800 801 700</p>
+			</div>
+		</div>
 
 	</footer>
 

@@ -4,12 +4,26 @@ $brandColor: #003876;
 
 nav {
 	background-color: $brandColor;
+	#logo-container {
+		position: relative;
+		display: block;
+		background-color: #f8ab4b;
+		@include bp-desktop {
+			background-color: transparent;
+		}
+	}
+
+	#logo {
+		width: 100%;
+		height: auto;
+		@include bp-mobile {
+			width: auto;
+			height: auto;
+		}
+	}
 
 	#nav-container {
 		background-color: $brandColor;
-	}
-	img {
-		float: left;
 	}
 
 	#hamburger-menu img {
@@ -57,7 +71,7 @@ nav {
 
 			li {
 				margin-right: 40px;
-				line-height: 70px;
+				line-height: 50px;
 				a:hover {
 					color:  #d45f51;
 					text-decoration: underline;
@@ -112,6 +126,17 @@ body {
 	img {
 		width: 100%;
 		height: auto;
+	}
+	#alt-banner {
+		display: none;
+	}
+	@include bp-tablet {
+		#mobile-banner {
+			display: none;
+		}
+		#alt-banner {
+			display: block;
+		}
 	}
 }
 
@@ -307,12 +332,28 @@ body {
 			display: none;
 		}
 	}
+	#notice-left {
+		@include bp-tablet {
+			float: left;
+			width: 50%;
+		}
+	}
+	#notice-right {
+		@include bp-tablet {
+			float: right;
+			width: 50%;
+		}
+	}
 }
 
 footer {
 	background-color: $brandColor;
 	text-align: center;
 	padding-bottom: 10px;
+	
+	#footer-container {
+		background-color: $brandColor;
+	}
 
 	h2 {
 		padding: 10px 0 10px 0;
@@ -328,10 +369,35 @@ footer {
 	a {
 		color: #d45f51;
 		font-family: raleway, sans-serif;
+	}
 
+	p {
+		color: #d45f51;
+		font-family: raleway, sans-serif;
 	}
 
 	ul {
 		display: none;
+	}
+	@include bp-tablet {
+		#social {
+			float: left;
+			width: 50%;
+		}
+		#contact {
+			float: right;
+			width: 50%;
+		}
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
+	@include bp-desktop {
+		#footer-container {
+			width: 1024px;
+			margin: 0 auto;
+		}
 	}
 }
