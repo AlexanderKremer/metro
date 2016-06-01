@@ -5,6 +5,7 @@
 		<title>Home | Tranz Metro Resposive Demo</title>
 		<meta name="description" content="Between 150 and 160 characters">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
+<!-- 		<link rel="stylesheet" href="css/hamburgler.css" /> -->
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 	</head>
@@ -18,27 +19,42 @@
 			</div>
 
 			<div id="hamburger-menu">
-				<a href="#"><img src="img/hamburger.png"></a>
+				<button id="hamburger">&#9776;</button>
+				<button id="cross">&#735;</button>
 			</div>
 
 			<div id="list-container">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Timetables</a>
-					<li><a href="#">Delays</a></li>
-					<li><a href="#">Tickets &amp; Fares</a></li>
-					<li><a href="#">Notice boards</a>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
+				<div class="menu">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#">Timetables</a></li>
+						<li><a href="#">Delays</a></li>
+						<li><a href="#">Tickets &amp; Fares</a></li>
+						<li><a href="#">Notice boards</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+
+				<div id="desktop-menu">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Timetables</a></li>
+						<li><a href="#">Delays</a></li>
+						<li><a href="#">Tickets &amp; Fares</a></li>
+						<li><a href="#">Notice boards</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</nav>
 
 	<div id="desktop-container">
 		<div id="banner">
-			<img id="mobile-banner" src="img/banner-mobile.png">
-			<img id="alt-banner" src="img/banner-alt.png">
+			<img id="mobile-banner" src="img/banner-mobile.png" alt="Tranz Metro train banner image">
+			<img id="alt-banner" src="img/banner-alt.png" alt="Tranz Metro train banner cropped image">
 		</div>
 
 		<div id ="layout-change">
@@ -76,7 +92,7 @@
 			<div id="notice-left">
 				<div class="notice-container">
 					<div class="image-container">
-						<img src="img/delays.jpg">
+						<img src="img/delays.jpg" alt="Train delay warning sign">
 					</div>
 					<p class="notice-heading"><a href="#">Delays to services on the Kapiti Line</a></p>
 					<p class="notice-content">Passengers are advised to expect delays to some services on the Kapiti Line due to speed restrictions. <a href="#">Read more.</a></p>
@@ -84,7 +100,7 @@
 				
 				<div class="notice-container">
 					<div class="image-container">
-						<img src="img/bus.jpg">
+						<img src="img/bus.jpg" alt="Image of a bus lane">
 					</div>
 					<p class="notice-heading"><a href="#">When buses are replacing trains - where do I catch the bus?</a></p>
 					<p class="notice-content">When buses replace trains on the Wellington rail network, the following locations are where buses stop to pick up and drop off passengers. <a href="#">Read more.</a></p>
@@ -92,7 +108,7 @@
 
 				<div class="notice-container">
 					<div class="image-container">
-						<img src="img/train.jpg">
+						<img src="img/train.jpg" alt="Image of a Tranz Metro train">
 					</div>
 					<p class="notice-heading"><a href="#">Service Interruption Glossary</a></p>
 					<p class="notice-content">Trains can run late for a number of reasons which are not always apparent to the passengers. Some of the more common reasons for delays are faults and emergency incidents. The following information outlines what can cause a delay and how it can affect the running of a service. <a href="#">Read more.</a></p>
@@ -102,7 +118,7 @@
 			<div id ="notice-right">
 				<div class="more-notice-container">
 					<div class="image-container">
-						<img src="img/mini-train-map.jpg">
+						<img src="img/mini-train-map.jpg" alt="small version of rail map">
 					</div>
 					<p class="notice-heading"><a href="#">Station abbreviations</a></p>
 					<p class="notice-content">If you subscribe to our customer alert system you will see that we need to abbreviate station names in our texts and tweets. <a href="#">Read more.</a></p>
@@ -110,15 +126,15 @@
 
 				<div class="more-notice-container">
 					<div class="image-container">
-						<img src="img/stadium.jpg">
+						<img src="img/stadium.jpg" alt="westpac stadium">
 					</div>
 					<p class="notice-heading"><a href="#">Heading to and from an event at the Wellington Stadium</a></p>
-					<p class="notice-content">Never been to the Wellington Stadium for an event? Here's how! Read more..</p>
+					<p class="notice-content">Never been to the Wellington Stadium for an event? Here's how! <a href="#">Read more..</a></p>
 				</div>
 
 				<div class="more-notice-container">
 					<div class="image-container">
-						<img src="img/time.jpg">
+						<img src="img/time.jpg" alt="Image of a clock">
 					</div>
 					<p class="notice-heading"><a href="#">Tranz Metro Punctuality</a></p>
 					<p class="notice-content">We know that the single most important part of our business is to get our passengers where they want to go on time. Because this is so important we will post this information on our site on a regular basis. <a href="#">Read more.</a></p>
@@ -141,8 +157,8 @@
 
 			<div id="social">
 				<h2>Social media</h2>
-				<img src="img/facebook.png">
-				<img src="img/twitter.png">
+				<img src="img/facebook.png" alt="facebook social media icon">
+				<img src="img/twitter.png" alt="twitter social media icon">
 			</div>
 
 			<div id="contact">
@@ -154,8 +170,10 @@
 
 	</footer>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="js/geolocation.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/hamburger.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=geometry" async defer></script>
 	</body>
 </html>
